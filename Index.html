@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ListUp - Task Manager</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <header>
+    <h1>ListUp</h1>
+    <button id="dark-mode-toggle" title="Toggle Dark Mode">🌙</button>
+  </header>
+
+  <main>
+    <form id="task-form">
+      <input
+        type="text"
+        id="task-title"
+        name="task-title"
+        placeholder="Add a new task..."
+        autocomplete="off"
+      />
+      <select id="task-priority" name="task-priority" aria-label="Priority (optional)">
+        <option value="" selected>Priority (optional)</option>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="Low">Low</option>
+      </select>
+      <input type="date" id="task-date" name="task-date" aria-label="Due date (optional)" />
+      <button type="submit" title="Add Task">Add</button>
+    </form>
+
+    <div class="controls">
+      <select id="sort-select" aria-label="Sort tasks">
+        <option value="createdAt">Sort by Created</option>
+        <option value="priority">Sort by Priority</option>
+        <option value="dueDate">Sort by Due Date</option>
+      </select>
+      <button id="toggle-completed">Hide Completed</button>
+    </div>
+
+    <ul id="task-list" aria-live="polite" aria-label="Task List"></ul>
+
+    <p id="empty-message" class="empty-message" aria-live="polite" hidden>
+      "Start by adding your first task! 🚀 Keep going!"
+    </p>
+  </main>
+
+  <footer>
+    Developed By Prata Smaran Jena
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>
